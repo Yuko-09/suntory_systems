@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>SalesList</title>
+</head>
+
+<body>
+	<h3>売上管理画面</h3>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>売上管理番号</th>
+				<th>年月日</th>
+				<th>商品ID</th>
+				<th>商品名</th>
+				<th>本数</th>
+				<th>売上価格</th>
+				<th>顧客ID</th>
+				<th>顧客名</th>
+				<th>店舗ID</th>
+				<th>店舗名</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="sales:${salesList}">
+				<td th:text="${sales.salesNumber}"></td>
+				<td th:text="${sales.targetDate}"></td>
+				<td th:text="${sales.product.productId}"></td>
+				<td th:text="${sales.productName}"></td>
+				<td th:text="${sales.quantity}"></td>
+				<td th:text="${sales.salesPrice}"></td>
+				<td th:text="${sales.customer.customerId}"></td>
+				<td th:text="${sales.customerName}"></td>
+				<td th:text="${sales.store.storeId}"></td>
+				<td th:text="${sales.storeName}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
+
