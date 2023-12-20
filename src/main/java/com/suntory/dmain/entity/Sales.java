@@ -36,21 +36,21 @@ public class Sales {
 	@Column(name = "sales_price")
 	private Integer salesPrice;
 	// 商品ID　（FK）
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "product_id", referencedColumnName = "product_id")
 	private Product product;
 	// 商品名
 	@Column(name = "product_name")
 	private String productName;
 	// 顧客ID　（FK）
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
 	private Customer customer;
 	// 顧客名
 	@Column(name = "customer_name")
 	private String customerName;
 	// ストアID　（FK）
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "store_id", referencedColumnName = "store_id")
 	private Store store;
 	// 店舗名
